@@ -12,7 +12,7 @@ class ApiService {
 
   Map<String, dynamic> _apiData;
 
-  initData() async {
+  Future<void> initData() async {
     try {
       http.Response res = await http.get(Uri.parse(url));
       if (res.statusCode == 200) {
@@ -26,7 +26,11 @@ class ApiService {
     }
   }
 
-  List<Map<String, dynamic>> get caseTimeSeries => _apiData["case_time_series"];
+  List<Map<String, dynamic>> get caseTimeSeries {
+    return (_apiData['cases_time_series'] as List)
+        .map((e) => e as Map<String, dynamic>)
+        ?.toList();
+  }
 
   List<Map<String, dynamic>> get stateWiseData => _apiData["statewise"];
 
