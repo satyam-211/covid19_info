@@ -16,9 +16,9 @@ class CovidTimeLineScreen extends StatelessWidget {
           dense: true,
           isThreeLine: true,
           leading: Text(item.date),
-          trailing: Text(item.deceased),
-          title: Text(item.confirmed),
-          subtitle: Text(item.recovered),
+          trailing: Text('Deceased: ${item.deceased} '),
+          title: Text('Confirmed : ${item.confirmed}'),
+          subtitle: Text('Recovered : ${item.recovered}'),
         );
       },
     );
