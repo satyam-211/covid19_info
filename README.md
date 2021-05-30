@@ -1,6 +1,6 @@
 # covid19_info
 
-A new Flutter project.
+Using api.covid19.org for displaying covid status in India.
 
 ## Getting Started
 
