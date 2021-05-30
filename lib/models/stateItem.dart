@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 
 class StateItem {
   final String stateName;
-  final int confirmed;
-  final int active;
-  final int recovered;
-  final int deaths;
+  final confirmed;
+  final active;
+  final recovered;
+  final deaths;
   StateItem._({
     @required this.stateName,
     @required this.confirmed,
@@ -42,7 +42,7 @@ class StateItem {
   }
 
   @override
-  int get hashCode {
+  get hashCode {
     return stateName.hashCode ^
         confirmed.hashCode ^
         active.hashCode ^

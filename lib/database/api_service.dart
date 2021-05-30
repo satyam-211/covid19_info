@@ -32,7 +32,11 @@ class ApiService {
         ?.toList();
   }
 
-  List<Map<String, dynamic>> get stateWiseData => _apiData["statewise"];
+  List<Map<String, dynamic>> get stateWiseData {
+    return (_apiData['statewise'] as List)
+        .map((e) => e as Map<String, dynamic>)
+        ?.toList();
+  }
 
   List<Map<String, dynamic>> get tested => _apiData["tested"];
 
