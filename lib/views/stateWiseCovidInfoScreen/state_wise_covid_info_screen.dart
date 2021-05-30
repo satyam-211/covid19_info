@@ -14,14 +14,23 @@ class StateWiseCovidInfoScreen extends StatelessWidget {
         final stateItem = controller.states[index];
         return Column(
           children: [
-            Text('${stateItem.stateName}'),
+            Text(
+              '${stateItem.stateName}',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline5
+                  .copyWith(fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 5,
+            ),
             ListTile(
               dense: true,
               isThreeLine: true,
-              leading: Text('${stateItem.active}'),
-              trailing: Text('${stateItem.deaths}'),
-              title: Text('${stateItem.confirmed}'),
-              subtitle: Text('${stateItem.recovered}'),
+              leading: Text('Active : ${stateItem.active}'),
+              trailing: Text('Deaths :${stateItem.deaths}'),
+              title: Text('Confirmed :${stateItem.confirmed}'),
+              subtitle: Text('Recovered :${stateItem.recovered}'),
             ),
           ],
         );

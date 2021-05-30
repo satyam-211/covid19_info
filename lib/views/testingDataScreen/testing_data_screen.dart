@@ -9,43 +9,60 @@ class TestingDataScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Provider.of<TestingDataController>(context);
     final testingData = controller.initTestingData();
-    return Card(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Flexible(
-              flex: 2,
-              child: Container(
-                child: Column(
-                  children: [
-                    Text('Total Confirmed'),
-                    Text(testingData['totalconfirmed']),
-                  ],
-                ),
-              )),
-          Flexible(
-              flex: 2,
-              child: Container(
-                  child: Column(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Flexible(
+            flex: 2,
+            child: Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('Total Deceased'),
-                  Text(
-                    testingData['totaldeceased'],
-                  ),
+                  Text('Total Confirmed',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline6
+                          .copyWith(fontWeight: FontWeight.bold)),
+                  Text(testingData['totalconfirmed']),
                 ],
-              ))),
-          Flexible(
-              flex: 2,
-              child: Container(
-                child: Column(
-                  children: [
-                    Text('Total Recovered'),
-                    Text(testingData['totalrecovered']),
-                  ],
+              ),
+            )),
+        Flexible(
+            flex: 2,
+            child: Container(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Total Deceased',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        .copyWith(fontWeight: FontWeight.bold)),
+                Text(
+                  testingData['totaldeceased'],
                 ),
-              )),
-        ],
-      ),
+              ],
+            ))),
+        Flexible(
+            flex: 2,
+            child: Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Total Recovered',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline6
+                          .copyWith(fontWeight: FontWeight.bold)),
+                  Text(testingData['totalrecovered']),
+                ],
+              ),
+            )),
+      ],
     );
   }
 }
